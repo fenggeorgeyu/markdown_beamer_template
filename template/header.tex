@@ -1,0 +1,108 @@
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{animate}
+\usepackage{multicol}%multi columns e.g. \begin{multicols}[2] ... \end{multicols}
+\usepackage{multirow}
+\usepackage{booktabs} % table \toprule \middlerule \bottomrule
+\usepackage[pdf]{graphviz} % graphviz in latex
+% --- subfigure --- 
+\usepackage{subfigure, subfloat}
+%\usepackage[export]{adjustbox} % vlignment for vertical alignment for \subfigure commands
+
+%%---tikz---
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,chains,positioning}
+
+
+
+%%---animation on tikz tree nodes---
+%%https://tex.stackexchange.com/questions/6135/how-to-make-beamer-overlays-with-tikz-node
+\tikzset{onslide/.code args={<#1>#2}{%
+  \only<#1>{\pgfkeysalso{#2}} % \pgfkeysalso doesn't change the path
+}}
+\tikzset{temporal/.code args={<#1>#2#3#4}{%
+  \temporal<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}}{\pgfkeysalso{#4}} % \pgfkeysalso doesn't change the path
+}}
+
+%%---flow char examples---
+%% https://tex.stackexchange.com/questions/274280/building-a-flow-chart-in-beamer-using-tikz
+%%---tikz flow chart examples---
+%% http://www.texample.net/tikz/examples/tag/flowcharts/
+
+
+% --- coding---
+\usepackage{fancybox}
+\usepackage{xcolor}
+% \usepackage{times}
+% \usepackage{listings}
+
+% allow frame break by default
+% \let\oldframe\frame
+% \renewcommand\frame[1][allowframebreaks]{\oldframe[#1]} 
+
+%==================new command=================
+\newcommand{\nt}[1]{\begin{theorem}#1\end{theorem}}
+\newcommand{\npr}[1]{\begin{proposition}#1\end{proposition}}
+\newcommand{\nc}[1]{\begin{corollary}#1\end{corollary}}
+\newcommand{\nlem}[1]{\begin{lemma}#1\end{lemma}}
+\newcommand{\nd}[1]{\begin{definition}#1\end{definition}}%\begin{flushright}
+%\IEEEQED\end{flushright}
+\newcommand{\nexp}[1]{\begin{example}#1\end{example}}
+\newcommand{\npf}[1]{\begin{proof}#1\end{proof}}
+\newcommand{\nequ}[1]{\begin{equation}#1\end{equation}}
+\newcommand{\nrmk}[1]{\begin{remark}#1\end{remark}}
+
+
+%%--other
+\newcommand{\enum}[1]{\begin{enumerate}#1\end{enumerate}}   % list items
+\newcommand{\al}[1]{\begin{align*}#1\end{align*}} % align equations no numbering
+\newcommand{\red}[1]{{\color{red}#1}}
+
+\newcommand{\eps}{\epsilon} % epsilon symbol for permutation
+%---vector, more flexible---
+%\newcommand{\vect}[1]{\boldsymbol{#1}} % bold style
+%\newcommand{\vect}[1]{\overset{\rightharpoonup}#1} % half arrow style
+\newcommand{\vect}[1]{\vv{#1}}
+
+
+\newcommand{\vectint}[2]{[\vect{#1},\vect{#2}]} % vector interval e.g. [\vect{s},\vect{e}]
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil} % ceiling function
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor} % floor function
+
+%---stanford & dartmouth relational operator
+
+\def\ojoin{\setbox0=\hbox{$\bowtie$}%
+  \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+\def\leftouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
+\def\rightouterjoin{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
+\def\fullouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+\newcommand{\extjoin}{\fullouterjoin_+}
+
+
+% Relational algebra symbols from ftp://reports.stanford.edu/www/dbgroup_only/latex-macros.html
+\def\select{\mbox{\Large$\sigma$}}
+\def\cross{\mbox{$\times$}}
+\def\intersection{\mbox{$\cap$}}
+\def\intersect{\mbox{$\cap$}}
+\def\union{\mbox{$\cup$}}
+\def\join{\mbox{$\bowtie$}}
+\def\leftsemijoin{\mbox{$\mathrel{\raise1pt\hbox{\vrule height6pt depth0pt width0.6pt\hskip-1.5pt$>$\hskip -2.5pt$<$}}$}}
+\def\rightsemijoin{\mbox{$\mathrel{\raise1pt\hbox{\hskip-1.5pt$>$\hskip -2.5pt$<$\hskip -1.5pt\vrule height6pt depth0pt width0.6pt}}$}}
+\def\project{\mbox{\Large$\pi$}}
+\def\Project{\mbox{$\Pi$}}
+\def\groupby{\mbox{\Large$G$}}
+
+%---outer join---
+\def\ojoin{\setbox0=\hbox{$\bowtie$}\rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+\def\leftouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
+\def\rightouterjoin{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
+\def\outerjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+\def\extouterjoin{\outerjoin_+} % extended outer join
+
+%---map reduce---
+\def\mapjoin{\overset{\text{\tiny{map}}}{\join}}
+\def\leftmapjoin{\overset{\text{\tiny{map}}}{\leftouterjoin}}
+\def\rightmapjoin{\overset{\text{\tiny{map}}}{\rightouterjoin}}
+\def\reducejoin{\overset{\text{\tiny{reduce}}}{\join}}

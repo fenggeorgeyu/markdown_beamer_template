@@ -1,0 +1,91 @@
+% \usetheme{CambridgeUS}
+\usetheme{Copenhagen}
+% \usetheme{Berlin}
+% \usetheme{Boadilla}
+\usecolortheme{beaver}
+% \usefonttheme{structurebold}
+% \usefonttheme{professionalfonts}
+\usepackage{times}
+
+
+% toc style
+\setbeamertemplate{section in toc}{{\color{red!80!black}\inserttocsectionnumber.}~\inserttocsection}
+
+% definition numbering
+\setbeamertemplate{theorems}[numbered]
+% figure numbering
+\setbeamertemplate{caption}[numbered]
+
+% item color
+\setbeamercolor{itemize item}{fg=red!80!black}
+\setbeamercolor{itemize subitem}{fg=red!80!black}
+\setbeamercolor{itemize subsubitem}{fg=red!80!black}
+
+
+
+% delete navigation
+\beamertemplatenavigationsymbolsempty
+
+% appendix slides no numbering
+\usepackage{appendixnumberbeamer}
+
+% title page style: no gray block for title
+\setbeamercolor{titlelike}{parent=structure}
+
+% % % section page style
+% \AtBeginSection[]{
+%   \begin{frame}
+%   \vfill
+%   \centering
+% %   \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+% %     \usebeamerfont{title}\insertsectionhead\par%
+% %   \end{beamercolorbox}
+%   \frametitle{Table of Contents}
+%   \tableofcontents[currentsection,currentsubsection]
+%   \vfill
+%   \end{frame}
+% }
+
+%% add logo
+% \logo{\includegraphics[height=26pt]{figure/ysu.png}}
+
+
+
+% add headline & footline like in CambridgeUS theme
+% \useoutertheme{infolines}
+
+% % delete footline
+% \setbeamertemplate{footline}{}
+
+% footline add page number
+% \setbeamertemplate{footline}[frame number]
+
+% footline (logo left, page number right)
+% \setbeamertemplate{footline}{%
+%         \includegraphics[align=c, height=1cm]{images/ysu.png}%
+%         \hfill%
+%         \usebeamercolor[fg]{page number in head/foot}%
+%         \usebeamerfont{page number in head/foot}%
+%         \insertframenumber\,/\,\inserttotalframenumber\kern1em%
+%         \vspace{6pt}
+%  }
+
+% navigation
+% \addtobeamertemplate{navigation symbols}{}{%
+%     \usebeamerfont{footline}%
+%     \usebeamercolor[fg]{footline}%
+%     \hspace{1em}%
+%     \insertframenumber/\inserttotalframenumber %add page number
+% }
+
+
+
+%add headline
+% \setbeamertemplate{headline}{%
+% \leavevmode%
+%   \hbox{%
+%     \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{palette quaternary}%
+%     \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}
+%     \end{beamercolorbox}%
+%   }
+% }
